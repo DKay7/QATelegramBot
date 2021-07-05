@@ -1,0 +1,1 @@
+QUESTION_COMMAND_NAME = "ask"

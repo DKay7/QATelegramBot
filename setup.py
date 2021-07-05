@@ -2,7 +2,8 @@ import logging
 from aiogram import Bot
 from aiogram.dispatcher import Dispatcher
 from aiogram.types import BotCommand
-from config.bot_config import TOKEN
+from config.bot.bot_config import TOKEN
+from config.commands.commands_names import QUESTION_COMMAND_NAME
 from handlers.handlers_registration import register_user_commands_handlers
 
 logger = logging.getLogger(__name__)
@@ -10,7 +11,7 @@ logger = logging.getLogger(__name__)
 
 async def set_commands(bot: Bot):
     commands = [
-        BotCommand(command="ask", description="Задать вопрос нейросети"),
+        BotCommand(command=QUESTION_COMMAND_NAME, description="Задать вопрос нейросети"),
     ]
     await bot.set_my_commands(commands)
 
